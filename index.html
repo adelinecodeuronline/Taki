@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./css/style.css"/>
+  
+  <script src="./js/app.js" defer></script>
+  <title>Project planning</title>
+</head>
+<body>
+
+  <header class="header">  
+  <h1>Project Planning</h1>
+  <div class="points-zone">
+    <h2>👏 Life points : <span id="points-count">0</span></h2>
+  </div>
+</header>
+
+<!----Formulaire projets------>
+<form id="project-form">
+  <input type="hidden" id="project-id">
+  <label for="project-name">Nom du projet</label>
+  <input type="text" id="project-name" name="project-name" placeholder="Nom du projet">
+  <button type="submit">Enregistrer</button>
+</form>
+
+<!-------Liste des projets------>
+<ul id="project-list"></ul>
+
+<footer class="footer">
+    <!-- Mentions, version, crédit -->
+</footer>
+
+</body>
+</html>
