@@ -1,7 +1,4 @@
-///////////NPO dans rapport de projet : inclure les features : système de points, stockage Mong DB, assistant IA, améliorer code méthode DRY
-//////////Implémenter favicon (remplacer celui par défaut de electron, chercher fichier)
-
-  // Constantes DB
+// Constantes DB
 const DB_NAME = "projectsDB";
 const DB_VERSION = 3;
 let db = null;
