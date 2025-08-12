@@ -180,7 +180,7 @@ button:hover {
   background: #dc2626;
 }
 
-/* Container et form des tâches */
+/* Container et formulaire des tâches */
 .tasks-container {
   background: var(--color-bg);
   padding: calc(var(--gap) / 1.5);
@@ -345,6 +345,12 @@ input[type="checkbox"].task-done:checked::before {
   opacity: 0;
 }
 
+#export {
+display: flex;
+gap: 2rem;
+ margin-left: 9rem;
+}
+
 #mentions {
   margin-top: 12rem;
   padding: 1rem;
@@ -360,5 +366,121 @@ input[type="checkbox"].task-done:checked::before {
 
 #mentions p {
   font-size: 0.7rem;
+}
+
+/*********************************/
+/*********MEDIA QUERIES***********/
+/* Mobile*/
+@media (max-width: 600px) {
+
+  main {
+    width: 100%;
+  }
+
+  #logo {
+    width: 40%;
+  }
+
+  #project-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #project-form input[type="text"] {
+    width: 100%;
+  }
+
+  #project-form button[type="submit"],
+  #export-json-btn,
+  #export-pdf-btn {
+    width: 100%;
+  }
+
+  #export-pdf-btn {
+    margin-left: 0;
+  }
+
+  #project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .tasks-container form {
+    flex-direction: column;
+  }
+
+  .tasks-container form input[type="text"],
+  .tasks-container form input[type="date"],
+  .tasks-container form button {
+    width: 100%;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  #slogan {
+    font-size: 0.75rem;
+  }
+
+  #export {
+  flex-direction: column;
+  margin-left: 0;
+  gap: 0.5rem;  
+}
+
+  #mentions {
+    font-size: 0.65rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Tablettes */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  #project-form {
+    width: 80%;
+  }
+
+  #project-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  #logo {
+    width: 20%;
+  }
+
+  .tasks-container form {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .tasks-container form input[type="text"],
+  .tasks-container form input[type="date"] {
+    flex: 1 1 45%;
+  }
+
+  .tasks-container form button {
+    flex: 1 1 100%;
+  }
+}
+
+/* Très grands écrans */
+@media (min-width: 1400px) {
+  main {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  #project-form {
+    width: 40%;
+  }
+
+  #logo {
+    width: 8%;
+  }
+
+  #project-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
 
