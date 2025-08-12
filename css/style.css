@@ -1,12 +1,12 @@
 :root {
-  --color-bg: #f5f7fa;
+  --color-bg: #FAFAF9;
   --color-surface: #ffffff;
-  --color-primary: #4f46e5;
+  --color-primary: rgb(224, 191, 0);
   --color-secondary: #10b981;
   --color-text: #1f2937;
   --color-muted: #6b7280;
 
-  --font-base: 'Inter', sans-serif;
+  --font-base: "Onest", sans-serif;
   --radius: 6px;
   --gap: 1rem;
 
@@ -17,7 +17,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
 body {
@@ -25,15 +25,31 @@ body {
   padding: var(--gap);
   background: var(--color-bg);
   font-family: var(--font-base);
-  color: var(--color-text);
+  color: var(--color-text);   
+}
+
+main {
+  width: 95%;
 }
 
 .header {
   display: flex;
-  align-items: center;
-  gap: 20rem;
+  flex-direction: column;
+  align-items: center; 
   padding: 1rem;
   margin-bottom: 2rem;
+  background-color: #F8F3EB;
+}
+
+#logo {
+  width: 10%;
+}
+
+#slogan {
+  font-size: 0.85rem;
+  color: #708090;
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
 }
 
 /* Formulaire de projet */
@@ -47,6 +63,7 @@ body {
   border-radius: var(--radius);
   box-shadow: 0 4px 8px var(--shadow);
   margin-bottom: calc(var(--gap) * 1.5);
+  width: 50%;
 }
 
 #project-form label {
@@ -70,7 +87,7 @@ body {
   border-color: var(--color-primary);
 }
 
-#project-form button[type="submit"] {
+#project-form button[type="submit"], #export-json-btn, #export-pdf-btn {
   flex: 0 0 auto;
   padding: 0.7em 1.2em;
   border: none;
@@ -82,9 +99,22 @@ body {
   transition: background 0.2s, transform 0.1s;
 }
 
-#project-form button[type="submit"]:hover {
-  background: darken(var(--color-primary), 10%);
+#export-json-btn, #export-pdf-btn {
+  margin-top: 4rem;  
+   background: rgb(0, 189, 202);  
+}
+
+#export-pdf-btn {
+  margin-left: 1.5rem;
+}
+
+button:hover {
+  background: rgb(229, 233, 179);
   transform: translateY(-1px);
+}
+
+.addTask:hover {
+  background:rgb(159, 170, 0) !important;
 }
 
 /* Liste des projets (grid) */
@@ -206,6 +236,18 @@ body {
   margin-top: 0 !important;
 }
 
+/*Message détection deadline*/
+.deadline-alert {
+  display: block;
+  color: orange;
+  font-weight: bold;
+}
+
+.deadline-alert.overdue {
+  color: red;
+}
+
+
 .tasks-container input[type="checkbox"] {
   accent-color: var(--color-primary);
   width: 1.2em;
@@ -243,12 +285,6 @@ body {
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
 }
-
-.tasks-container form button:hover {
-  background: darken(var(--color-primary), 10%);
-  transform: translateY(-1px);
-}
-
 
 /* Masquer/afficher */
 .task-section.hidden {
@@ -307,5 +343,22 @@ input[type="checkbox"].task-done:checked::before {
 }
 .toast.hide {
   opacity: 0;
+}
+
+#mentions {
+  margin-top: 12rem;
+  padding: 1rem;
+  background-color: #F8F3EB;
+  color: #708090; 
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+}
+
+#mentions h2 {
+  font-size: 0.8rem;
+}
+
+#mentions p {
+  font-size: 0.7rem;
 }
 
